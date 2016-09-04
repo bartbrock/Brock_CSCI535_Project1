@@ -11,11 +11,6 @@ namespace Brock_CSCI535_Project1
 {
     class Program
     {
-        // When accessed by another type, these constants
-        // must be referenced via the fully qualified name.
-        // Used with Task 6 below.
-        public const int myIntConst = 5;
-        public const string myStringConst = "I'm a const";
         static void Main(string[] args)
         {
             /*****  TASK 3 BASIC INPUT AND OUTPU *****/
@@ -85,37 +80,37 @@ namespace Brock_CSCI535_Project1
             //Console.ReadKey();
 
             /********* TASK 8 *************/
-            int webIndexBase = 0;
-            int webIndexStart = 0;
-            int webIndexOffset = 0;
-            string tempString, condString;
-            string baseSearchString = "Currently";
-            string condSearchString = "class=\"cond\">";
-            string tempSearchString = "class=\"temp\">";
+            //int webIndexBase = 0;
+            //int webIndexStart = 0;
+            //int webIndexOffset = 0;
+            //string tempString, condString;
+            //string baseSearchString = "Currently";
+            //string condSearchString = "class=\"cond\">";
+            //string tempSearchString = "class=\"temp\">";
 
-            WebClient myWebClient = new WebClient();
-            myWebClient.Headers.Add("user-agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.2; .NET CLR 1.0.3705;)");
+            //WebClient myWebClient = new WebClient();
+            //myWebClient.Headers.Add("user-agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.2; .NET CLR 1.0.3705;)");
 
-            string webString = myWebClient.DownloadString("http://www.accuweather.com/en/us/charleston-sc/29401/weather-forecast/330678");
-            webIndexBase = webString.IndexOf(baseSearchString);
+            //string webString = myWebClient.DownloadString("http://www.accuweather.com/en/us/charleston-sc/29401/weather-forecast/330678");
+            //webIndexBase = webString.IndexOf(baseSearchString);
 
-            Console.WriteLine("Press any key to display weather conditon and temperature");
-            Console.ReadKey(); Console.WriteLine();
+            //Console.WriteLine("Press any key to display weather conditon and temperature");
+            //Console.ReadKey(); Console.WriteLine();
 
-            // Local Weather Condition
-            webIndexStart = webString.IndexOf(condSearchString, webIndexBase) + condSearchString.Length;
-            webIndexOffset = webString.IndexOf("<", webIndexStart) - webIndexStart;
-            condString = webString.Substring(webIndexStart, webIndexOffset);
-            Console.WriteLine(condString);
+            //// Local Weather Condition
+            //webIndexStart = webString.IndexOf(condSearchString, webIndexBase) + condSearchString.Length;
+            //webIndexOffset = webString.IndexOf("<", webIndexStart) - webIndexStart;
+            //condString = webString.Substring(webIndexStart, webIndexOffset);
+            //Console.WriteLine(condString);
 
-            //// Local weather temperature
-            webIndexStart = webString.IndexOf(tempSearchString) + tempSearchString.Length;
-            webIndexOffset = webString.IndexOf("<", webIndexStart) - webIndexStart;
-            tempString = webString.Substring(webIndexStart, webIndexOffset);
-            Console.WriteLine("{0} Degrees", tempString);
+            ////// Local weather temperature
+            //webIndexStart = webString.IndexOf(tempSearchString) + tempSearchString.Length;
+            //webIndexOffset = webString.IndexOf("<", webIndexStart) - webIndexStart;
+            //tempString = webString.Substring(webIndexStart, webIndexOffset);
+            //Console.WriteLine("{0} Degrees", tempString);
 
-            Console.WriteLine("\n\n");
-            Console.ReadKey();
+            //Console.WriteLine("\n\n");
+            //Console.ReadKey();
         }
     }
 
